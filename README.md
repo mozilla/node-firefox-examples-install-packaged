@@ -1,6 +1,6 @@
-# build-and-deploy example
+# build-and-deploy
 
-Simple example demonstrating how to prepare and deploy a packaged app to a Firefox OS simulator using `[fxos-deploy](https://github.com/nicola/fxos-deploy)`.
+Simple example demonstrating how to prepare and deploy a packaged app to a Firefox OS simulator using [`fxos-deploy`](https://github.com/nicola/fxos-deploy).
 
 ## Usage
 
