@@ -1,16 +1,16 @@
 {
-  "name": "build-and-deploy",
+  "name": "node-firefox-examples-install-packaged",
   "version": "1.0.0",
-  "description": "demonstrate how to build and deploy a packaged app",
+  "description": "Shows how to install a packaged app using node-firefox",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Soledad Penadés <sole@mozilla.com>",
+  "license": "Apache 2",
   "dependencies": {
-    "fxos-deploy": "^0.3.2",
-    "temporary": "0.0.8",
-    "zip-folder": "^1.0.0"
+    "node-firefox-install-app": "^1.0.0",
+    "node-firefox-connect": "^1.0.0",
+    "node-firefox-start-simulator": "^1.1.0"
   }
 }

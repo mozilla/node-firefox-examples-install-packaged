@@ -1,23 +1,21 @@
-var deploy = require('fxos-deploy/command');
+'use strict';
+
 var path = require('path');
-var zipFolder = require('zip-folder');
-var tmp = require('temporary');
+var startSimulator = require('node-firefox-start-simulator');
+var connect = require('node-firefox-connect');
+var installApp = require('node-firefox-install-app');
 
-var appDir = path.join(process.cwd(), 'app');
-var manifestURL = path.join(appDir, 'manifest.webapp');
-var tmpFile = new tmp.File();
-var zipPath = tmpFile.path;
+var appPath = path.join(__dirname, 'app');
 
-console.log(manifestURL, zipPath);
-
-zipFolder(appDir, zipPath, function(err) {
-	deploy({
-		manifestURL: manifestURL,
-		zip: zipPath,
-		exit: true
-	}, function(err, result, next) {
-		console.error('finished: ', err);
-		tmpFile.unlink();
-		next(err);
-	});
+startSimulator().then(function(simulator) {
+  connect(simulator.port).then(function(client) {
+    installApp({
+      appPath: appPath,
+      client: client
+    }).then(function(result) {
+      console.log('Installed!');
+    }, function(err) {
+      console.error('ERROR: app not installed', err);
+    });
+  });
 });

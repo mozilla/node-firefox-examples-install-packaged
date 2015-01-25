@@ -1,14 +1,11 @@
 {
-  "name": "HelloWorld",
-  "description": "A Hello World app",
+  "name": "node-firefox-examples-install-packaged",
+  "description": "An app for showing how to use node-firefox for installing a packaged app",
   "launch_path": "/index.html",
   "icons": {
     "16": "/icons/icon16x16.png",
     "48": "/icons/icon48x48.png",
     "60": "/icons/icon60x60.png",
     "128": "/icons/icon128x128.png"
-  },
-  "type": "privileged",
-  "permissions": {
   }
 }
